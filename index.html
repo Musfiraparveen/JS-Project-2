@@ -172,11 +172,15 @@
     <script>
         function filterVideos() {
             const searchValue = document.getElementById('search-input').value.toLowerCase();
+            console.log("Search Value Entered:", searchValue);
             const videoCards = document.querySelectorAll('.video-card');
-
+            console.log("Total Videos Found:", videoCards);
+            
             videoCards.forEach(card => {
                 const title = card.querySelector('.title').textContent.toLowerCase();
+                console.log("Checking Video Title:", title);
                 card.style.display = title.includes(searchValue) ? '' : 'none';
+                console.log("Match Found:", title.includes(searchValue)); 
             });
         }
     </script>
